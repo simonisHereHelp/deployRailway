@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "error": "failed to access camera",
+      "tellsign": "The 'camera feed' screen contains no image",
+      "possible_causes": "Failed to access the device such as camera, or front camera, or third-party device (e.g., microscope adaptor camera)",
+      "how_to_handle": "Check webcam/microscope adaptors <a href='./Js/camTroubleShoot.html' target='_blank'>here</a> to ensure availability. Reload the page, if problem persists, contact administrator."
+    },
+    {
+      "id": 2,
+      "error": "failed to start video",
+      "tellsign": "PIP window contains no image and/or no audio sound",
+      "possible_causes": "Content URL error, or player or browser incompatibility, or firewall blocking video stream",
+      "how_to_handle": "Verify the video URL, or use a compatible browser, or check network settings and firewall"
+    },
+    {
+      "id": 3,
+      "error": "connection error",
+      "tellsign": "Screen shows no motion or is blacked out",
+      "possible_causes": "No internet access, or video stream blocked by firewall",
+      "how_to_handle": "Check internet connection, or ensure firewall settings allow access to the required URLs, or contact IT support"
+    },
+    {
+      "id": 4,
+      "error": "other errors",
+      "tellsign": "Unexpected behavior or application crash",
+      "possible_causes": "Unknown errors or bugs, or conflicts with other software",
+      "how_to_handle": "Reload the application, or check console for error messages, or report the issue to support"
+    },
+    {
+        "id": 5,
+        "error": "video time stamp and TOC file errors",
+        "tellsign": "Text content for the video is not displayed or incorrectly displayed",
+        "possible_causes": "File not found, file corrupted, or network issues",
+        "how_to_handle": "Reload the page, if problem persists, contact administrator."
+      }
+  ]
+  

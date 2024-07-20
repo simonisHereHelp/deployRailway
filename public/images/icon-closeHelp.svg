@@ -1,0 +1,17 @@
+<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <defs></defs>
+  <circle cx="16" cy="16" r="16" style="fill: orange;" transform="matrix(1, 0, 0, 1.0000000000000002, 0, 0)"></circle>
+  <g transform="matrix(1.039077, 0, 0, 1.082574, 4.265475, 3.272625)" style="">
+    <defs></defs>
+  </g>
+  <g transform="matrix(0.664841, 0, 0, 0.664841, 8.458466, 8.361752)">
+    <defs></defs>
+  </g>
+  <g transform="matrix(1.166115, 0, 0, 1.042453, 2.634876, 3.320638)" style="">
+    <defs></defs>
+    <g></g>
+    <g>
+      <path d="M18,9v12h-2V9c0-2.21-1.79-4-4-4S8,6.79,8,9v4.17l1.59-1.59L11,13l-4,4l-4-4l1.41-1.41L6,13.17V9c0-3.31,2.69-6,6-6 S18,5.69,18,9z" style="fill: rgb(255, 255, 255);"></path>
+    </g>
+  </g>
+</svg>

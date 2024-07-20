@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="colorTransition" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#FFFF99">
+        <animate attributeName="stop-color" values="#FFFF99;#99CCFF;#FFFF99" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#FFFF99">
+        <animate attributeName="stop-color" values="#FFFF99;#99CCFF;#FFFF99" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+  <line x1="380" y1="30" x2="380" y2="120" stroke="url(#colorTransition)" stroke-width="8"/>
+  <line x1="350" y1="75" x2="410" y2="75" stroke="url(#colorTransition)" stroke-width="8"/>
+  <rect x="5.75" y="26.08" width="312.337" height="102.605" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <defs/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" x="24.282" y="85.293" transform="matrix(3.086584, 0, 0, 2.374091, 30.01682, -100.48329)">TOC</text>
+  <g transform="matrix(3.312356, 0, 0, 3.312356, 21.46083, 38.954704)">
+    <defs/>
+    <path d="M19,3H4.99C3.89,3,3,3.9,3,5l0.01,14c0,1.1,0.89,2,1.99,2h10l6-6V5C21,3.9,20.1,3,19,3z M7,8h10v2H7V8z M12,14H7v-2h5V14z M14,19.5V14h5.5L14,19.5z"/>
+  </g>
+</svg>

@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+:root {
+  --base-font-size: 16px;
+  --font-size-1: 0.9rem;
+  --font-size-toc: 1.0rem;
+  --font-size-2: 1.1rem; 
+  --font-size-3: 1.25rem;
+  --font-size-4: 2.0rem;
+  --font-size-5: 3.0rem;
+  --font-size-emoji: 2.5rem;
+  --batonBlue: #1a73e8;
+  --batonGrey: #F2EEE4;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  background-color: #d1d1d1;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height:100%;
+  overflow-x: hidden;
+}
+
+
+
+#blogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(252, 252, 252, 1);
+  z-index: 1000;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: none; /* Initially hidden */
+}
+
+#blogOverlay.visible {
+  opacity: 1;
+  display: block; /* Make it visible when it has the visible class */
+
+}
+
+.post-title {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+.post-content {
+  font-size: 1rem;
+}
+footer {
+  background-color: #343a40;
+  color: #fff;
+}
+
+
+.controls {
+  position: absolute; /* Position the controls absolutely */
+  top: 10px; /* 10px from the top */
+  right: 5px; /* 5px from the right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh; /* Height of the slider */
+  justify-content: center;
+  width: 6%; /* Width of the parent container */
+}
+
+#tocSlider {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Remove default styling */
+  writing-mode: vertical-lr; /* Vertical slider */
+  direction: rtl; /* Right to left direction */
+  height: 100%; /* Use the full height of the container */
+  margin: 0;
+  background: transparent;
+  transform: rotate(180deg); /* Flip the slider vertically */
+  width: 100%; /* Ensure the slider takes up the full width of the parent container */
+}
+
+#tocSlider::-webkit-slider-runnable-track {
+  width: 100%; /* Set the track width to 100% of the parent container */
+  height: 100%;
+  background: linear-gradient(to bottom, #fbcd44, #ff7f00); /* Gradient gray color for the track */
+  border-radius: 20px;
+}
+
+#tocSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* Increased size by 3X */
+  height: 20px; /* Increased size by 3X */
+  background-color: #ffffff; /* Orange color for the thumb */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -26px; /* Adjust to center the thumb */
+}
+
+#tocSlider::-moz-range-track {
+  width: 100%; /* Set the track width to 100% of the parent container */
+  height: 100%;
+  background: linear-gradient(to bottom, #fbcd44, #ff7f00); /* Gradient gray color for the track */
+  border-radius: 5px;
+}
+
+#tocSlider::-moz-range-thumb {
+  width: 20px; /* Increased size by 3X */
+  height: 20px; /* Increased size by 3X */
+  background-color: #f6f6f5; /* Orange color for the thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#tocSlider::-ms-track {
+  width: 100%; /* Set the track width to 100% of the parent container */
+  height: 100%;
+  background: linear-gradient(to bottom, #fbcd44, #ff7f00); /* Gradient gray color for the track */
+  border-radius: 5px;
+  border: none;
+}
+
+#tocSlider::-ms-thumb {
+  width: 60px; /* Increased size by 3X */
+  height: 60px; /* Increased size by 3X */
+  background-color: #ff7f00; /* Orange color for the thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#loading {
+  position: fixed;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1005; /* Ensure it is on top of other elements */
+}
+
+#helpBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: grey;
+  z-index: 1000; /* Ensure it covers all other elements */
+}
+
+
+.chatbot-container {
+  width: 50vw;
+  height: 95vh;
+  position: fixed;
+  z-index: 1001;
+  right: 25vw;
+  bottom: 0vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2px;
+  padding-top: 10px;
+  margin-top: 2vh;
+  background: url(../gfx/logo.png) #333333;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 0%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 15px -10px;
+          box-shadow: 0 10px 15px -10px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3);
+          transition-timing-function: cubic-bezier(0.75, -0.15, 0, 3);
+} 
+
+
+
+.hsien-side-left {
+  transition: width 0.3s, display 0.3s;
+}
+
+.hsien-side-left.full-width {
+  width: 70vw;
+}
+
+.hsien-side-left.half-width {
+  width: 35vw;
+}
+
+.hsien-side-left.hidden {
+  display: none;
+}
+
+.hsien-webcam {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hsien-webcam.visible {
+  display: block;
+}
+
+.hsien-media-container { 
+  display: grid;
+  grid-template-columns: 40vw 40vw 20vw;
+  gap: 0px;
+  align-items: start;
+  overflow: hidden; /* Ensure no overflow */
+}
+
+
+.hsien-side-left {
+position:absolute;
+top: 0;
+left:0;
+width:70vw;
+}
+
+
+#hsien-vtt {
+  margin-top: 20px; /* Adjust the value as needed */
+  display: flex; /* Apply flex properties */
+  flex: 0 1 auto;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px black; /* Add black shadow */
+  z-index: 3;
+}
+
+
+.hsien-textHighlight, .ht-textHighlight {
+  display: grid;
+  font-size: var(--font-size-toc);
+  grid-template-columns: 1fr;
+  grid-gap: 3px;
+  background: transparent;
+  border: transparent;
+  padding: 5px;
+}
+
+.ht-textSec:hover {
+  cursor: pointer;
+  outline: none; /* Optional: Remove the default outline */
+}
+
+.hsien-textSec, .ht-textSec {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: black;
+  font-size: var(--font-size-toc);
+  line-height: 1.5;
+}
+
+#hsien-pip {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 2;
+  max-width: 100%;  /* Ensure the video does not overflow horizontally */
+  max-height: 100%; /* Ensure the video does not overflow vertically */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Ensures the video scales down to fit within the container */
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.35);
+  border: 5px solid white; /* Adding a white border with 5px width */
+}
+
+.hsien-pip-container {
+  position: relative;
+}
+
+
+
+.hsien-t1 {
+  font-size: var(--font-size-1);
+  margin-top: 10px;
+}
+
+.hsien-canvas-layer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Center the timer */
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px;
+}
+
+
+.hsien-canvas-container {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* Make background transparent */
+}
+
+#hsien-canvas-top, #hsien-canvas-scope {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Optional: background color to visualize the canvas area */
+  object-fit: contain;
+}
+
+#hsien-cam-status {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around; /* or space-between */
+  align-items: center; /* vertically center the items */
+  margin-bottom: 0; /* Ensure there's no bottom margin */
+  margin: 5px; /* Ensure there's no margin */
+  padding: 0; /* Ensure there's no padding */
+}
+
+#hsien-cam-status > div {
+  margin: 0 30px; /* Remove any margin from child divs */
+  padding: 0; /* Remove any padding from child divs */
+}
+
+#hsien-video  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+
+.hsien-error-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.hsien-error-popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+.hsien-close-popup {
+  color: #5065A8; /* Match the color of the "WI TOC" button */
+  float: right;
+  font-size: 48px;
+  font-weight: bold;
+  transform: rotate(180deg); /* Invert the button */
+}
+
+.hsien-close-popup:hover,
+.hsien-close-popup:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#hsien-error-message{
+  display: block;
+  margin-top: 10px;
+  line-height: 1.6; /* Add line spacing between categories */
+  font-size: 0.4rem;
+}
+
+.cam-flashing {
+  animation: flash 0.5s infinite;
+}
+
+
+
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1366px) {
+  .hsien-media-container {
+    grid-template-columns: 40vw 40vw 20vw; /* Maintain the same proportions */
+  }
+
+
+  .hsien-textSec, .ht-textSec {
+    font-size: 1rem;
+  }
+
+}

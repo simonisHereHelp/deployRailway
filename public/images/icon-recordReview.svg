@@ -1,0 +1,5 @@
+<svg id="icon-recordReview" viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <defs></defs>
+  <circle cx="16" cy="16" r="16" fill="#1a73e8"></circle>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial; font-size: 13.6069px; font-weight: 700; text-anchor: middle; white-space: pre;" transform="matrix(0.445565, 0, 0, 0.440954, 9.168336, 3.088408)" x="16" y="21">Review<tspan x="16" dy="1em">​</tspan>Your<tspan x="16" dy="1em">​</tspan>Video</text>
+</svg>

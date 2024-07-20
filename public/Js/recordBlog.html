@@ -1,0 +1,104 @@
+<!-- File: recordBlog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recording Practice Video Blog</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #343a40;
+    }
+    header h1 {
+      margin: 0;
+      padding: 20px;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #d3d3d3 !important;
+    }
+    .post-title {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+    }
+    .post-content {
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-dark text-white text-center py-3 mb-4">
+    <div class="container">
+      Let's take a short pause from the video...
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <article class="mb-4">
+          <h2 class="post-title">Next, Record Practice Video...</h2>
+          <p class="text-muted">Posted on <time datetime="2024-07-04">July 4, 2024</time></p>
+          <p class="post-content">
+            <h2>1. Why Recording?</h2>
+            <span style="font-size: var(--font-size-1); text-align: left; display: block;">Next session is to record practice video. Practice video is important to document your progress and identify areas for improvement.</span>
+            <br>
+            <img src="../images/how2Record3.png" alt="Recording Step 1" style="width: 100%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article class="mb-4">
+          <h2 class="post-title">2. How to Record?</h2>
+          <p class="post-content">
+            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+              <div style="flex: 1; padding-right: 20px;">
+                <span style="font-size: var(--font-size-1); display: block; text-align: left;">
+                  Click <span style="color: orange; font-weight: bold;">[start]</span> to record and <span style="color: orange; font-weight: bold;">[pause]</span> anytime. Use <span style="color: orange; font-weight: bold;">[back]</span> to restart and <span style="color: orange; font-weight: bold;">[Submit]</span> to send. Follow the WI instructions during recording.
+                </span>
+              </div>
+              <img src="../images/how2Record2.jpg" alt="Recording Step 2" style="width: 40%; height: auto; object-fit: contain; display: block; margin-right: 5%;">
+            </div>
+          </p>
+        </article>
+        <article class="mb-4">
+          <h2 class="post-title">3. What to Expect After Submission?</h2>
+          <p class="post-content">
+            <span style="font-size: var(--font-size-2); text-align: left; display: block; font-weight: bold;">Each submission is a testament to your effort!</span><br>
+            <span style="font-size: var(--font-size-1); text-align: left; display: block;">After submission, your video will be reviewed. Submitting multiple videos provides more evidence of your practice and progress, so the more times you submit, the better.</span><br><br>
+            <img src="../images/how2Record3.png" alt="Recording Step 3" style="width: 100%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article class="mb-4 text-center">
+          <button id="exit" class="btn btn-warning text-white" style="font-size: var(--font-size-3); padding: 10px 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">Back to the Video</button>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <div class="container">
+      <p>Our Team Works for Your Success™</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('exit').addEventListener('click', () => {
+      if (window.opener && !window.opener.closed) {
+        window.opener.document.querySelector('#hsien-handCheckr').__vue__.pipElement.play();
+      }
+      window.close();
+    });
+  </script>
+</body>
+</html>

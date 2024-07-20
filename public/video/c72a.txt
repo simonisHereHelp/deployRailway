@@ -1,0 +1,71 @@
+<p class="hsien-textHighlight">
+  <span class="ht-textSec hsien-chatSession" data-start="0.00" data-end="3.00" data-scope="0">
+    #7.2 Prep and Solder Distal End of Micro-Coaxial Cables to Transducer Circuit
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="3.50" data-end="11.00" data-scope="0">
+    Strip approximately 4mm cable outer jacket using blade breaker.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="11.50" data-end="33.00" data-scope="0">
+    Separate outer conductors by pulling the insulator off the main line of the coaxial cable. 
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="33.50" data-end="54.00" data-scope="1">
+    Hold the outer conductors with tweezers and twist conductors.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="54.50" data-end="71.00" data-scope="0">
+    Paste and tin the outer and center conductors using 350°C chisel.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="71.00" data-end="78.0" data-scope="0" open-script="savePhoto(1, context, '3.5');">
+    [save #1] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="79.00" data-end="91.00" data-scope="1">
+    ??? not sure what to put down here
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="91.50" data-end="105.00" data-scope="1">
+    Cut approximately half the outer conductors closest to the stripped edge of the outer jacket with wire cutters.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="105.50" data-end="124.00" data-scope="1">
+    ??? not sure what to put down here
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="124.50" data-end="127.00" data-scope="0" open-script="savePhoto(2, context, '79');">
+    [save #2] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="127.50" data-end="162.00" data-scope="1">
+    Strip outer conductors using blade breaker so that approximately 1mm is available, measuring from the edge of the colored outer jacket.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="162.50" data-end="176.00" data-scope="1">
+    Strip dielectric insulator using blade breaker.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="176.50" data-end="184.00" data-scope="0" open-script="savePhoto(3, context, '127.5');">
+    [save #3] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="184.50" data-end="209.00" data-scope="0">
+    Cut the lower section of the array with blade breaker and double edge blade.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="209.50" data-end="227.00" data-scope="0">
+    Place the transducer subassembly array on aluminum base plate with double sided tape.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="227.50" data-end="231.00" data-scope="0" open-script="savePhoto(4, context, '184.5');">
+    [save #4] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="231.50" data-end="255.00" data-scope="1">
+    Trim and prep the outer conductor.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="255.50" data-end="265.00" data-scope="1">
+    Trim and prep the dielectric insulator.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="265.50" data-end="269.00" data-scope="1" open-script="savePhoto(5, context, '231.5');">
+    [save #5] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="269.50" data-end="300.00" data-scope="1">
+    Solder the outer conductor to ground pad of transducer subassembly.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="300.50" data-end="332.00" data-scope="1">
+    Solder the dielectric insulator. 
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="332.50" data-end="335.00" data-scope="1" open-script="savePhoto(6, context, '269.5');">
+    [save #6] Save practice work.
+  </span>
+  <span class="ht-textSec hsien-chatSession" data-start="335.50" data-end="338.00" data-scope="1" open-script="uploadPhotos(context)">
+    [upload] Upload practice work photos now.
+  </span>
+</p>

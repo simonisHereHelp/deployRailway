@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Your Saved Photos</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #343a40;
+    }
+    header h1 {
+      margin: 0;
+      padding: 20px;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #d3d3d3 !important;
+    }
+    .post-title {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+    }
+    .post-content {
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-dark text-white text-center py-3 mb-4">
+    <div class="container">
+      Now, it's time to upload photos...
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <article class="mb-4">
+          <h2 class="post-title">Upload Your Saved Photos</h2>
+          <p class="text-muted"><time datetime="{currentDate}">{currentDate}</time></p>
+          <p class="post-content">
+            Please review your photos below and provide your name before submitting.
+          </p>
+        </article>
+        <article id="photo0" class="mb-4">
+          <h2 class="post-title">Photo #1</h2>
+          <p class="text-muted"><time datetime="{time0}">{time0}</time></p>
+          <p class="post-content">
+            <img src="{img0}" alt="Photo #1" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article id="photo1" class="mb-4">
+          <h2 class="post-title">Photo #2</h2>
+          <p class="text-muted"><time datetime="{time1}">{time1}</time></p>
+          <p class="post-content">
+            <img src="{img1}" alt="Photo #2" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article id="photo2" class="mb-4">
+          <h2 class="post-title">Photo #3</h2>
+          <p class="text-muted"><time datetime="{time2}">{time2}</time></p>
+          <p class="post-content">
+            <img src="{img2}" alt="Photo #3" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article id="photo3" class="mb-4">
+          <h2 class="post-title">Photo #4</h2>
+          <p class="text-muted"><time datetime="{time3}">{time3}</time></p>
+          <p class="post-content">
+            <img src="{img3}" alt="Photo #4" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article id="photo4" class="mb-4">
+          <h2 class="post-title">Photo #5</h2>
+          <p class="text-muted"><time datetime="{time4}">{time4}</time></p>
+          <p class="post-content">
+            <img src="{img4}" alt="Photo #5" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article id="photo5" class="mb-4">
+          <h2 class="post-title">Photo #6</h2>
+          <p class="text-muted"><time datetime="{time5}">{time5}</time></p>
+          <p class="post-content">
+            <img src="{img5}" alt="Photo #6" style="width: 70%; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </p>
+        </article>
+        <article class="mb-4 text-center">
+          <div class="form-group">
+            <label for="userNameInput">Ready to submit? What's Your Name?</label>
+            <input type="text" id="userNameInput" class="form-control" placeholder="Your Name Here">
+          </div>
+          <button id="submitPhotos" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Yes, Submit</button>
+          <button id="exit" class="btn btn-danger">No, Just Exit</button>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <div class="container">
+      <p>Our Team Works for Your Success™</p>
+    </div>
+  </footer>
+
+</body>
+</html>

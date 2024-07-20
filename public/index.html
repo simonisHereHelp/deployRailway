@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provisio</title>
+    <link rel="stylesheet" href="./Css/chatBot.css">
+    <link rel="stylesheet" href="./Css/hsien.css">
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="hsien-handCheckr">
+        <img id="loading" src="/images/loading.gif" alt="Loading...">
+
+        <div id="helpBackdrop" style="display: none;">
+            <div class="chatbot-container"></div>
+            <div style="position: absolute; bottom: 10vh; right: 10vw; display: flex; justify-content: flex-end; margin-right: 10px;">
+                <button id="closeHelp" style="background: transparent; border: none;">
+                    <img src="./images/icon-closeHelp.svg" alt="Close Help">
+                </button>
+            </div>
+        </div>
+
+        <div class="hsien-media-container">
+            <div class="hsien-side-left hsien-side">
+                <div class="hsien-pip-container">
+                    <video id="hsien-pip" controls playsinline style="display: block;">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="hsien-vtt" style="font-size: var(--font-size-3);">
+                    <span>...</span><br>
+                </div>
+            </div>
+
+            <div class="hsien-webcam">
+                <div class = "hsien-canvas-container" style="width: 2px; height:2px">
+                    <div id="recorder-box" class="hsien-canvas-layer" style="display: none;">
+                      
+                    </div>
+                    <canvas id="hsien-canvas-top" ></canvas>
+                    <canvas id="hsien-canvas-scope"></canvas>
+
+                    <div id="hsien-cam-status" class="hsien-t1" style="font-size: var(--font-size-3);">
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOC & PDF area -->
+
+    <div id="cbContainer" class="chatBot">
+        <div class="controls">
+            <input type="range" id="tocSlider" orient="vertical" min="0" max="100" step="1" value="0">
+        </div>
+        <div class="chatBotHeading" style="font-size: var(--font-size-3);">
+            <div>
+            <button type="button" id="chatOpenTrigger" style="font-size: var(--font-size-2); color:orange; background: transparent; display:block;">[⬆️open⬆️]</button>
+            <button type="button" id="chatCloseTrigger" style="font-size: var(--font-size-2); color:orange; background: transparent; display:none;">⬇️</button>
+            </div>
+            <san>-</san>
+            <button type="button" id="course1">[ #1 ]</button>
+            <button type="button" id="course2">[ #2 ]</button>
+        </div>
+        <hr class="">
+        <div class="chatBody" style="font-size: var(--font-size-3);">
+            <div class="chatSession hsien-chatSession"></div>
+        </div>
+
+        <form class="chatForm2" autocomplete="off" style="display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-around; align-items: center; font-size: var(--font-size-2); margin-top: 20px;">
+            </div>
+            <div style="display: flex; align-items: center; height:60%; ">
+                <div id="savePhotoBtnContainer" style="flex: 0 0 40%; display: flex; justify-content: center; align-items: center;">
+                    <button type="button" id="savePhotoBtn" style="border: none; background: none; cursor: pointer;">
+                        <img src="./images/savePhoto.svg" alt="Checked" style="width:60px;height: 60px;">
+                    </button>
+                </div>
+                <div id="savePhotoBtnNote" style="flex: 0 0 60%; color: white; text-align: left; font-size: var(--font-size-2); display: flex; align-items: center;">
+                    saved!
+                </div>
+            </div>
+            <div id="savePhotoMenuNote" style="color: white; text-align: center; font-size: var(--font-size-1);">
+                <span>Photo captured. Back to video...</span>
+            </div>
+        </form>
+        
+        
+
+        <form class="chatForm" autocomplete="off" style="display:flex; flex-direction:column;">
+            <div style="display: flex; justify-content: space-around; align-items: center;font-size: var(--font-size-2); margin-top: 20px;">
+                <button type="button" id="stepBack" >[back]
+ 
+                </button>
+                <button type="button" id="choiceB" >
+
+                </button>
+                <button type="button" id="openHelp">
+                  [ help ]
+                </button>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <div id="buttons" style="flex: 0 0 30%; display: flex; justify-content: flex-end; gap: 10px; margin-right: 20px;">
+                  <button type="button" id="courseButton" style="display: block;"></button>
+                  <button type="button" id="nextButton"></button>
+                </div>
+                <div id="buttonNote" style="flex: 0 0 60%; color: white; text-align: left; font-size: var(--font-size-2);">
+                  --
+                </div>
+            </div>
+            <div id="menuNote" style="color:white; text-align: center; font-size: var(--font-size-1); ">
+                <span>note</span>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScripts from native directory -->
+    <script src="./Js/chatBotValidate.js"></script>
+    <script src="./Js/chatBotAnimate.js"></script>
+    <script type="module" src="main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- chatBot -->
+    <script>
+        var BotStar = { appId: "s9ed24e80-cea2-11ed-afee-918b64365252", mode: "inline" };
+        !function (t, a) {
+            var e = function () { (e.q = e.q || []).push(arguments) };
+            e.q = e.q || [], t.BotStarApi = e; !function () {
+                var t = a.createElement("script");
+                t.type = "text/javascript", t.async = 1, t.src = "https://widget.botstar.com/static/js/widget.js";
+                var e = a.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(t, e)
+            }()
+        }(window, document);
+    </script>
+    <div class="chatbot-container" style="height: 100%; display: none;"></div>
+
+
+
+</body>
+</html>

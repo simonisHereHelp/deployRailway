@@ -1,0 +1,9 @@
+<svg id='icon-topCamSvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26" height="26" fill="#646366">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="black"/>
+    </filter>
+  </defs>
+  <!-- Add your SVG path here -->
+  <path d="M...Z" filter="url(#shadow)"/>
+</svg>

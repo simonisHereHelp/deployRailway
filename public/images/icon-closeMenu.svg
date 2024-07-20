@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" style="fill: orange;" transform="matrix(1, 0, 0, 1.0000000000000002, 0, 0)"/>
+  <text style="fill: rgb(228, 228, 228); font-family: Arial; font-size: 18px; font-weight: 700; text-anchor: middle; white-space: pre;" transform="matrix(1.7960510253906252, 0, 0, 1.2348619699478152, -7.893996259858547, -0.8099569700007425)" x="16" y="21">▼</text>
+</svg>

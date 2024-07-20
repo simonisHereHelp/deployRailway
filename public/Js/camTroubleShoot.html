@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .status-available {
+            color: green;
+        }
+        .status-in-use {
+            color: red;
+        }
+        .troubleshooting {
+            font-size: small;
+            margin: 5px 0 0 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check WebCam</h1>
+
+    <div class="section">
+        <h2>First, check the connection</h2>
+        <p>Ensure that your webcam is properly connected to your computer.</p>
+        <img src="../images/webCam_connection.png" width="300px" alt="Check Webcam Connections" />
+    </div>
+
+    <div class="section">
+        <h2>Second, check if the webcam is used by other apps</h2>
+        <p>Below are available webcams and their status:</p>
+        <ul id="webcamList"></ul>
+    </div>
+
+    <script>
+        async function getWebcamStatus() {
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const videoDevices = devices.filter(device => device.kind === 'videoinput');
+            const webcamList = document.getElementById('webcamList');
+
+            webcamList.innerHTML = '';
+
+            for (let device of videoDevices) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Device: ${device.label || 'Unnamed Device'} (ID: ${device.deviceId}) - Status: `;
+
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: { deviceId: device.deviceId }
+                    });
+
+                    listItem.textContent += 'Available';
+                    listItem.classList.add('status-available');
+                    stream.getTracks().forEach(track => track.stop());
+                } catch (error) {
+                    listItem.textContent += 'In Use or Not Accessible';
+                    listItem.classList.add('status-in-use');
+                    listItem.appendChild(createTroubleshootingMessage());
+                }
+
+                webcamList.appendChild(listItem);
+            }
+        }
+
+        function createTroubleshootingMessage() {
+            const message = document.createElement('p');
+            message.textContent = 'Possible reasons: Another application (e.g., Zoom, Teams) is using the webcam. Please close other applications and try again.';
+            message.classList.add('troubleshooting');
+            return message;
+        }
+
+        getWebcamStatus();
+    </script>
+</body>
+</html>
